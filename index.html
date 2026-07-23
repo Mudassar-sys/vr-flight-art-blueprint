@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VR Flight Sim Art Production Blueprint | CrewNexa</title>
+<style>
+:root{--bg:#07090e;--panel:#0d1219;--panel2:#111827;--line:#1e2a3a;--amber:#f5a623;--cyan:#38bdf8;--txt:#d7dee8;--dim:#8494a7;--green:#34d399}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6}
+.mono{font-family:'Consolas','Courier New',monospace}
+header{padding:56px 24px 32px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#0f1a2b 0%,var(--bg) 70%);border-bottom:1px solid var(--line)}
+.tag{display:inline-block;border:1px solid var(--amber);color:var(--amber);font-size:11px;letter-spacing:3px;padding:5px 14px;border-radius:2px;margin-bottom:18px}
+h1{font-size:clamp(26px,4vw,44px);font-weight:700;letter-spacing:-.5px}
+h1 span{color:var(--cyan)}
+.sub{color:var(--dim);max-width:640px;margin:14px auto 0;font-size:15px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:16px;background:var(--panel);position:sticky;top:0;z-index:9;border-bottom:1px solid var(--line)}
+nav button{background:none;border:1px solid var(--line);color:var(--dim);padding:9px 16px;font-size:13px;cursor:pointer;border-radius:3px;font-family:inherit}
+nav button.on{border-color:var(--amber);color:var(--amber);background:#f5a62311}
+main{max-width:1060px;margin:0 auto;padding:40px 20px 80px}
+section{display:none}section.on{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+h2{font-size:24px;margin-bottom:6px}
+.lede{color:var(--dim);margin-bottom:28px;max-width:760px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:20px}
+.card h3{font-size:15px;color:var(--cyan);margin-bottom:8px}
+.card p,.card li{font-size:13.5px;color:var(--txt)}
+.card .n{font-size:11px;color:var(--amber);letter-spacing:2px}
+ul{padding-left:18px}li{margin:5px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+th{text-align:left;color:var(--amber);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid #14202e;vertical-align:top}
+tr:hover td{background:#0f1725}
+.pill{display:inline-block;background:#38bdf815;border:1px solid #38bdf844;color:var(--cyan);font-size:11px;padding:2px 9px;border-radius:20px;margin:2px 2px 2px 0}
+.hl{color:var(--amber)}
+.ok{color:var(--green)}
+.price{background:linear-gradient(135deg,#0d1520,#101c2c);border:1px solid #f5a62355;border-radius:8px;padding:28px;text-align:center}
+.price .amt{font-size:42px;color:var(--amber);font-weight:700}
+.price .per{color:var(--dim);font-size:13px}
+.divider{height:1px;background:var(--line);margin:34px 0}
+.step{display:flex;gap:16px;margin-bottom:14px}
+.step .num{flex-shrink:0;width:34px;height:34px;border:1px solid var(--amber);color:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+.foot{text-align:center;padding:30px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line)}
+.banner{background:#34d39912;border:1px solid #34d39944;border-radius:6px;padding:16px 20px;margin-bottom:24px;font-size:14px}
+svg text{font-family:'Consolas',monospace}
+</style>
+</head>
+<body>
+<header>
+<div class="tag">CREWNEXA | DEDICATED VR ART RESOURCE</div>
+<h1>Open-World VR Flight Sim<br><span>Art Production Blueprint</span></h1>
+<p class="sub">How our senior Unity environment artist ships aircraft and large-scale worlds that hold frame on standalone VR. Built for studios where the artist must own the pipeline end to end.</p>
+</header>
+<nav id="nav">
+<button data-t="t1" class="on">Aircraft Pipeline</button>
+<button data-t="t2">Terrain &amp; World</button>
+<button data-t="t3">Quest Budgets</button>
+<button data-t="t4">First 30 Days</button>
+<button data-t="t5">Engagement &amp; Pricing</button>
+</nav>
+<main>
+
+<section id="t1" class="on">
+<h2>Aircraft, end to end</h2>
+<p class="lede">One artist owns the full path from reference to a flight-ready prefab. No handoffs between five freelancers, no "the rigger left" risk.</p>
+<svg viewBox="0 0 1000 120" style="width:100%;margin-bottom:24px">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f5a623"/></marker></defs>
+<g font-size="11" fill="#d7dee8" text-anchor="middle">
+<rect x="10" y="35" width="110" height="50" rx="6" fill="#0d1219" stroke="#38bdf8"/><text x="65" y="56">REFERENCE</text><text x="65" y="72">+ BLOCKOUT</text>
+<line x1="120" y1="60" x2="150" y2="60" stroke="#f5a623" marker-end="url(#ar)"/>
+<rect x="152" y="35" width="110" height="50" rx="6" fill="#0d1219" stroke="#38bdf8"/><text x="207" y="56">HIGH POLY</text><text x="207" y="72">SCULPT</text>
+<line x1="262" y1="60" x2="292" y2="60" stroke="#f5a623" marker-end="url(#ar)"/>
+<rect x="294" y="35" width="110" height="50" rx="6" fill="#0d1219" stroke="#38bdf8"/><text x="349" y="56">RETOPO</text><text x="349" y="72">+ BAKE</text>
+<line x1="404" y1="60" x2="434" y2="60" stroke="#f5a623" marker-end="url(#ar)"/>
+<rect x="436" y="35" width="110" height="50" rx="6" fill="#0d1219" stroke="#38bdf8"/><text x="491" y="56">PBR TEXTURE</text><text x="491" y="72">TRIMS + ATLAS</text>
+<line x1="546" y1="60" x2="576" y2="60" stroke="#f5a623" marker-end="url(#ar)"/>
+<rect x="578" y="35" width="110" height="50" rx="6" fill="#0d1219" stroke="#f5a623"/><text x="633" y="56" fill="#f5a623">RIG</text><text x="633" y="72" fill="#f5a623">CTRL SURFACES</text>
+<line x1="688" y1="60" x2="718" y2="60" stroke="#f5a623" marker-end="url(#ar)"/>
+<rect x="720" y="35" width="110" height="50" rx="6" fill="#0d1219" stroke="#38bdf8"/><text x="775" y="56">LODs</text><text x="775" y="72">+ COLLIDERS</text>
+<line x1="830" y1="60" x2="860" y2="60" stroke="#f5a623" marker-end="url(#ar)"/>
+<rect x="862" y="35" width="128" height="50" rx="6" fill="#0d1219" stroke="#34d399"/><text x="926" y="56" fill="#34d399">UNITY PREFAB</text><text x="926" y="72" fill="#34d399">FLIGHT-READY</text>
+</g>
+</svg>
+<div class="grid g2">
+<div class="card"><div class="n">EXTERIOR</div><h3>Airframe that reads at every distance</h3><ul><li>Hand-crafted high poly, clean bakes, no AI-generated assets in the product</li><li>Trim sheets and shared atlases so ten aircraft do not mean ten material sets</li><li>Livery masks so variants cost hours, not weeks</li></ul></div>
+<div class="card"><div class="n">COCKPIT</div><h3>Cockpits built for VR hands</h3><ul><li>Interaction-first layout: every switch, lever and stick modeled to be grabbed</li><li>Legible instruments at VR resolution, baked AO for depth</li><li>Separate interior lighting rig for day and dusk flying</li></ul></div>
+<div class="card"><div class="n">RIGGING</div><h3>Rigged for the flight model, not just the render</h3><ul><li>Control surfaces, gear, props, flaps and canopies rigged with clean pivots and naming your engineers can drive from code</li><li>Bone-based where it is cheap, blendshape only where it earns its cost</li></ul></div>
+<div class="card"><div class="n">INTEGRATION</div><h3>Delivered inside your project</h3><ul><li>Works in your Unity project and your version control, daily commits</li><li>Prefab conventions agreed with your engineering lead up front</li><li>Collision meshes, damage states and destruction variants on request</li></ul></div>
+</div>
+</section>
+
+<section id="t2">
+<h2>Terrain and large open worlds</h2>
+<p class="lede">Big VR worlds die in two ways: they look empty, or they melt the frame budget. The fix is procedural authorship with hand-finished hero areas.</p>
+<div class="grid g2">
+<div class="card"><div class="n">AUTHORING</div><h3>Gaia Pro and stamp-based sculpting</h3><ul><li>Heightmap stamping for fast, art-directable landmass iteration</li><li>Biome spawners with rule sets: slope, altitude and mask-driven placement of trees, rocks, props</li><li>Splat-map texturing with distance blending to kill tiling</li></ul></div>
+<div class="card"><div class="n">SCATTER</div><h3>Procedural density, artist control</h3><ul><li>Rule-set scatter for forests and fields, density maps painted by hand where it matters</li><li>Hero areas (airports, towns, landmarks) dressed manually on top of the procedural base</li><li>Re-runnable: change a rule, regrow the world, keep the hand-placed layer</li></ul></div>
+<div class="card"><div class="n">SCALE</div><h3>Streaming-friendly world structure</h3><ul><li>Chunked terrain tiles sized with your engineer for streaming and floating origin</li><li>Impostors and billboards for the far ring, full meshes only near the player</li><li>Horizon and water treated as cheap backdrops, not simulated geometry</li></ul></div>
+<div class="card"><div class="n">TOOLING</div><h3>Plays well with editor tooling</h3><ul><li>Comfortable working inside custom Unity editor tools and extending prefab workflows</li><li>Naming, folder and prefab conventions agreed up front so nothing arrives as a mystery asset</li><li>Documentation with every delivery, another artist could pick it up cold</li></ul></div>
+</div>
+</section>
+
+<section id="t3">
+<h2>Standalone VR performance budgets</h2>
+<p class="lede">Numbers agreed before modeling starts, verified in-headset before delivery. Art that ships at 72 to 90 Hz, not art that "the engineer will optimize later."</p>
+<table>
+<tr><th>Budget item</th><th>Quest 2 target</th><th>Quest 3 target</th><th>How we hold it</th></tr>
+<tr><td>Draw calls per frame</td><td class="mono">80 - 150</td><td class="mono">120 - 200</td><td>Atlasing, material merging, GPU instancing for scatter</td></tr>
+<tr><td>Triangles in view</td><td class="mono">350k - 500k</td><td class="mono">750k - 1M</td><td>Aggressive LOD chains, impostors for the far ring</td></tr>
+<tr><td>Hero aircraft (LOD0)</td><td class="mono">30k - 60k tris</td><td class="mono">60k - 100k tris</td><td>Detail spent where the player looks: cockpit and silhouette</td></tr>
+<tr><td>Textures</td><td class="mono">2K atlases, ASTC</td><td class="mono">2K - 4K, ASTC</td><td>Trim sheets, shared atlases, mip discipline</td></tr>
+<tr><td>Lighting</td><td colspan="2" class="mono">Baked + light probes, minimal realtime</td><td>Baked AO in cockpits, probe-lit aircraft over terrain</td></tr>
+<tr><td>Shaders</td><td colspan="2" class="mono">Mobile-tier, single pass instanced</td><td>No full-screen grabs, no heavy transparency stacks</td></tr>
+</table>
+<div class="divider"></div>
+<div class="grid g3">
+<div class="card"><h3>Profiled, not guessed</h3><p>Every delivery checked with RenderDoc / OVR Metrics in headset. Frame budget reports included with milestones.</p></div>
+<div class="card"><h3>Motion comfort aware</h3><p>Horizon stability, cockpit reference frames and readable speed cues treated as art requirements, not afterthoughts.</p></div>
+<div class="card"><h3>Built to your ceiling</h3><p>These are defaults. If your project sets different budgets, the pipeline adapts and the numbers above get replaced by yours.</p></div>
+</div>
+</section>
+
+<section id="t4">
+<h2>The first 30 days, concretely</h2>
+<p class="lede">No onboarding theater. Real output from week one, and week one is free.</p>
+<div class="step"><div class="num">1</div><div><strong class="ok">Week 1, the free audition.</strong><p>Pick one real task from your backlog. He works it inside your project, your version control, your conventions. No meetings, no management overhead, no invoice. Judge the output on Friday. If it is not obvious he can lead your art pipeline, delete everything and we part as friends.</p></div></div>
+<div class="step"><div class="num">2</div><div><strong>Week 2, first aircraft exterior.</strong><p>Reference pack, blockout approved by you, then high poly and bakes on the airframe. Budgets agreed with your engineering lead before the first polygon.</p></div></div>
+<div class="step"><div class="num">3</div><div><strong>Week 3, cockpit and rig.</strong><p>Interaction-ready cockpit, control surfaces and gear rigged with clean pivots and naming your code can drive.</p></div></div>
+<div class="step"><div class="num">4</div><div><strong>Week 4, in-engine and on-budget.</strong><p>LOD chain, colliders, prefab assembly, in-headset perf pass with a frame report. You end month one with a flight-ready aircraft in your build, not a folder of renders.</p></div></div>
+<div class="banner"><strong class="ok">Why the audition is free:</strong> hiring the artist who owns your whole world is a high-stakes call. We would rather you judge a week of real output than a portfolio and a promise. The risk sits with us, where it belongs.</div>
+</section>
+
+<section id="t5">
+<h2>Engagement and pricing</h2>
+<p class="lede">One senior artist, dedicated to you. We handle the contract, you run the work. No agency layer inside your workflow.</p>
+<div class="grid g2">
+<div class="price"><div class="n" style="letter-spacing:2px;font-size:11px;color:#8494a7">FULL-TIME DEDICATED</div><div class="amt">$3,600</div><div class="per">per month, 160 hours</div><div class="divider"></div><p style="font-size:13.5px">Embedded in your team, your tools, your version control. Daily commits, timezone overlap for standups.</p></div>
+<div class="price" style="border-color:#38bdf855"><div class="n" style="letter-spacing:2px;font-size:11px;color:#8494a7">PART-TIME DEDICATED</div><div class="amt" style="color:var(--cyan)">$2,000</div><div class="per">per month, 80 hours</div><div class="divider"></div><p style="font-size:13.5px">Same artist, same pipeline, half the hours. A sensible way to start if full-time feels heavy.</p></div>
+</div>
+<div class="divider"></div>
+<div class="grid g3">
+<div class="card"><h3>Trial week: free</h3><p>Both plans start with the zero-obligation audition week. You owe nothing until you have seen real output in your own project.</p></div>
+<div class="card"><h3>Leave anytime</h3><p>Monthly billing after the trial, two weeks notice either side. No lock-in, no minimum term, all work-in-progress files handed over.</p></div>
+<div class="card"><h3>Direct access</h3><p>Interview him before anything starts. You talk to the artist directly every day. CrewNexa only handles contracts and payroll.</p></div>
+</div>
+<div class="divider"></div>
+<div style="text-align:center">
+<p style="color:var(--dim);font-size:14px">Portfolio, resume and a pipeline walkthrough Loom are available on request.</p>
+<p style="margin-top:10px;font-size:15px">Mudassar Zafar · Business Development · <span class="hl">CrewNexa</span></p>
+</div>
+</section>
+
+</main>
+<div class="foot">CrewNexa is a globally operating engineering staffing company. Our operations follow ISO 27001 practices. All artwork delivered under this engagement is hand-crafted; no generative AI assets ship in your product.</div>
+<script>
+var btns=document.querySelectorAll('#nav button'),secs=document.querySelectorAll('main section');
+btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.classList.remove('on')});secs.forEach(function(s){s.classList.remove('on')});b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});});});
+</script>
+</body>
+</html>
